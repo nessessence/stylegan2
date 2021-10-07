@@ -50,7 +50,7 @@ def _get_cuda_gpu_arch_string():
     gpus = [x for x in device_lib.list_local_devices() if  x.device_type == 'GPU' ]
     if len(gpus) == 0:
         raise RuntimeError('No GPU devices found')
-    (major, minor) = _get_compute_cap(gpus[0])
+    (major, minor) = _get_compute_cap(gpus[1])
     return 'sm_%s%s' % (major, minor)
 
 def _run_cmd(cmd):
